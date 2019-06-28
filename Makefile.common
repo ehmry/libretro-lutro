@@ -1,7 +1,11 @@
+ifeq ($(LIBRETRO_COMM_DIR),)
+	LIBRETRO_COMM_DIR := $(CORE_DIR)/libretro-common
+endif
+
 LUALIB_DIR := $(CORE_DIR)/deps/lua/src
 
 INCFLAGS := -I$(CORE_DIR) \
-				-I$(CORE_DIR)/libretro-common/include \
+				-I$(LIBRETRO_COMM_DIR) \
 				-I$(CORE_DIR)/deps/zlib \
 				-I$(CORE_DIR)/deps \
 				-I$(LUALIB_DIR)
